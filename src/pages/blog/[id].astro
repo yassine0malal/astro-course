@@ -1,45 +1,3 @@
-<!-- ---
-import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import Main from "../../components/Main.astro";
-import H1 from "../../components/H1.astro";
-import { type CollectionEntry, render } from "astro:content";
-import { Image } from "astro:assets";
-import { getEntryBySlug } from "astro:content";
-export const prerender =true
-
-const {id} = Astro.params;
-const post = await getEntryBySlug("posts",id as string);
-
-if (!post) {
-    return Astro.redirect("/404")
-}
-
-type Props = {
-    post: CollectionEntry<"posts">;
-};
-
-// const { post } = Astro.props;
-const { Content } = await render(post);
----
-
-<Layout title={post.data.title}>
-    <Main>
-        <H1 text={post.data.title} />
-        <Image
-            src={post.data.image}
-            alt={post.data.title}
-            width={1024}
-            height={1024 / 1.5}
-            class="rounded-sm shadow-xl mb-4 aspect-thumbnail object-cover"
-        />
-        <div class="prose prose-2xl overflow-visible relative mb-60 py-12">
-            <Content />
-        </div>
-    </Main>
-</Layout> -->
-
-
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
@@ -75,12 +33,12 @@ const { Content } = await render(post);
     <Main>
         <H1 text={post.data.title} />
         <Image
-            src={post.data.image}
-            alt={post.data.title}
-            width={1024}
-            height={1024 / 1.5}
-            class="rounded-sm shadow-xl mb-4 aspect-thumbnail object-cover"
-        />
+    src={post.data.image}
+    alt={post.data.title}
+    width={1024}
+    height={683}
+    class="rounded-sm shadow-xl mb-4 aspect-thumbnail object-cover"
+/>
         <div class="prose prose-2xl overflow-visible relative mb-60 py-12">
             <Content />
         </div>
