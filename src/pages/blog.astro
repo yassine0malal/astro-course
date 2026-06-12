@@ -6,14 +6,14 @@ import H1 from "../components/H1.astro";
 import PostList from "../components/PostList.astro";
 
 const posts = await getCollection("posts");
-console.log(posts);
+// console.log(posts);
 ---
 
 <Layout title="Blog | Rhythm Nation">
-    <Main>
+    <Main >
         <H1 text="Rhythm Nation Blog" />
 
         <PostList posts={posts} />
-        
+
     </Main>
 </Layout>
